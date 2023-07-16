@@ -28,7 +28,8 @@ let password=document.getElementById('password');
 let email=document.getElementById('email');
 //console.log(email);
 
-
+let passwordError=document.getElementById('password-error');
+let emailError=document.getElementById('email-error');
 let signup=()=>{
     createUserWithEmailAndPassword(auth, email.value, password.value)
   .then(async(userCredential) => {
@@ -38,52 +39,58 @@ let signup=()=>{
       password:password.value,
     });
     console.log(user);
+    if (user) {
+      window.open('http://127.0.0.1:5500/home/home.html')
+    }
+
+   
 
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log(errorMessage);
-    document.getElementById('error').innerHTML=errorMessage;
-    // ..
+    if (errorMessage === 'Firebase: Error (auth/missing-password).') {
+      console.log('yes')
+      passwordError.innerHTML='*'+"missing password"
+    }
+     else if("Firebase: Password should be at least 6 characters (auth/weak-password)."){
+      console.log('no')
+      passwordError.innerHTML='*'+"password should be atleast 6 character"
+      
+     }
+     if (errorMessage =='Firebase: Error (auth/user-not-found).') {
+      console.log('yes')
+      let emailError=document.getElementById('email-error');
+     emailError.innerHTML+='*'+"user not found"
+    }
+    if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
+      console.log('yes')
+     emailError.innerHTML='*'+"Please enter correct email"
+    }
+    else if (errorMessage === 'Firebase: Error (auth/email-already-in-use).') {
+      console.log('yes')
+      let Error=document.getElementById('email-error');
+     Error.innerHTML='*'+"email-already-in-use"
+    }
+    
+    
+  
+    
   });
   
-    // console.log(email.value);
-    // console.log(password.value);
 }
-let login=()=>{
-  signInWithEmailAndPassword(auth, email.value, password.value)
-  .then(async(userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    const docRef = doc(db, "user", user.uid);
-const docSnap = await getDoc(docRef);
 
-if (docSnap.exists()) {
-  console.log("Document data:", docSnap.data());
-} else {
-  // docSnap.data() will be undefined in this case
-  console.log("No such document!");
-}
-    //console.log(user);
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorMessage)
-  });
-}
-let verify=()=>{
-  sendEmailVerification(auth.currentUser)
-  .then(() => {
-    // Email verification sent!
+// let verify=()=>{
+//   sendEmailVerification(auth.currentUser)
+//   .then(() => {
+//     // Email verification sent!
    
-  });
+//   });
 
-}
+// }
 
 
 window.signup=signup;
-window.login=login;
-window.verify=verify;
+
+// window.verify=verify;

@@ -19,22 +19,23 @@
                 </div>
                 <div class="form_styling">
                     <p>Username<p>
-                    <input type="text" name="" id="" class="input">
+                    <input type="text" name="" id="" class="input" required>
                 </div>
                 <div class="form_styling">
                     <p>Email</p>
-                    <input type="email" name="" id="email" class="input">
+                    <input type="email" name="" id="email" class="input" required>
+                    <span id="email-error" class="error"></span>
                 </div>
                 <div class="form_styling">
                     <p>Password</p>
                     <input type="password" name="" id="password" class="input" placeholder="Password">
-                    <span id="error"></span>
+                    <span id="password-error" class="error"></span>
                 </div>
                  <!-- <button onclick="signup()">Sign Up</button> -->
               
             </form>
             <div class="button_styling">
-                <button class="btn btn-primary signup_btn"  onclick="signup()" type="button">SignUp
+                <button class="btn btn-primary signup_btn"  onclick="signup()" type="submit">SignUp
                 </button>
                  <p class="para">Already have an account?<a class="link"  href="login/login.html">Login</a></p>
               </div>
