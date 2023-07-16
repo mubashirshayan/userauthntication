@@ -19,19 +19,20 @@
                 </div>
                 <div class="form_styling">
                     <p>Username<p>
-                    <input type="text" name="" id="" class="input" required>
+                    <input type="text" name="" id="user-name" class="input" required placeholder="Enter your name">
                 </div>
                 <div class="form_styling">
                     <p>Email</p>
-                    <input type="email" name="" id="email" class="input" required>
-                    <span id="email-error" class="error"></span>
+                    <input type="email" name="" id="email" class="input" required placeholder="Email">
+                    <p id="email-error" class="error"></p>
                 </div>
                 <div class="form_styling">
                     <p>Password</p>
                     <input type="password" name="" id="password" class="input" placeholder="Password">
-                    <span id="password-error" class="error"></span>
+                    <p id="password-error" class="error"></p>
                 </div>
                  <!-- <button onclick="signup()">Sign Up</button> -->
+                
               
             </form>
             <div class="button_styling">
@@ -42,7 +43,7 @@
               <!-- <div class="button_styling"> -->
                 <div class="d-grid gap-3 col-9 mx-auto">
                     <button class="btn btn-danger signup_btn" type="button" onclick="verify()"><i class="fa-brands fa-facebook" style="color: #0756df;"></i>Login with Facebook</button>
-                    <button class="btn btn-primary signup_btn" type="button"> <i class="fa-brands fa-google" style="color: #ba2121;"></i>Login with Google</button>
+                    <button class="btn btn-primary signup_btn" type="button" onclick="googleSignup()"> <i class="fa-brands fa-google" style="color: #ba2121;"></i>Login with Google</button>
                   </div>
             <!-- </div> -->
         </div>

@@ -43,27 +43,35 @@ let login=()=>{
     console.log("No such document!");
   }
    if (user) {
-    window.open('http://127.0.0.1:5500/home/home.html')
+    window.open('../home/home.html')
    }
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorMessage)
+      if (errorMessage=='Firebase: Error (auth/user-not-found).') {
+ 
+        let passwordError=document.getElementById('password-error');
+        passwordError.innerHTML='*'+"user not found"
+        emailError.innerHTML='*'+"user not found"
+      }
       if (errorMessage === 'Firebase: Error (auth/missing-password).') {
-        console.log('yes')
+        
         let passwordError=document.getElementById('password-error');
         passwordError.innerHTML='*'+"missing password"
       }
       if (errorMessage === 'Firebase: Error (auth/wrong-password).') {
-        console.log('yes')
+       
         let passwordError=document.getElementById('password-error');
         passwordError.innerHTML='*'+"please enter correct password"
       }
       if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
-        console.log('yes')
+   
        emailError.innerHTML='*'+"Please enter correct email"
       }
     });
 }
+
+
 window.login=login;
