@@ -7,10 +7,12 @@
     <title>User Authentication</title>
     <link rel="stylesheet" href="style/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
 <body>
+    
     <div id="container">
         <div id="main">
             <form action="">
@@ -38,12 +40,12 @@
             <div class="button_styling">
                 <button class="btn btn-primary signup_btn"  onclick="signup()" type="submit">SignUp
                 </button>
-                 <p class="para">Already have an account?<a class="link"  href="login/login.html">Login</a></p>
+                 <p class="para">Already have an account?<a class="link"  href="login.html">Login</a></p>
               </div>
               <!-- <div class="button_styling"> -->
                 <div class="d-grid gap-3 col-9 mx-auto">
-                    <button class="btn btn-danger signup_btn" type="button" onclick="verify()"><i class="fa-brands fa-facebook" style="color: #0756df;"></i>Login with Facebook</button>
-                    <button class="btn btn-primary signup_btn" type="button" onclick="googleSignup()"> <i class="fa-brands fa-google" style="color: #ba2121;"></i>Login with Google</button>
+                    <button class="btn facebookSignup signup_btn" id="facebookSignup" type="button" onclick="verify()"><i class="bi bi-facebook"></i>Login with Facebook</button>
+                    <button class="btn googleSignup signup_btn" id="googleSignup" type="button" > <i class="bi bi-google"></i>Login with Google</button>
                   </div>
             <!-- </div> -->
         </div>

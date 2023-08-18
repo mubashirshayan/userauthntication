@@ -26,6 +26,17 @@
     background-color: white;
    
 }
+#login_main{
+    /* height: 500px;
+    width: 400px; */
+
+    height: 500px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+   
+}
 .form_styling{
     height: 90px;
     margin-left: 30px;
@@ -63,4 +74,11 @@
 .error{
     font-size: 12px;
     color: red;
+}
+.googleSignup{
+    background-color: gainsboro !important;
+}
+.facebookSignup{
+    background-color: rgb(49, 49, 206) !important;
+    color: white !important;
 }
